@@ -6,8 +6,11 @@ vtk>=9.4
 jupyterlab
 ipywidgets
 pythreejs
-ipygany
 panel>=0.14
 openpyxl
 trame
-jupyter-server-proxy
+panel>=0.14  
+trame  
+trame-vtk  
+trame_jupyter_extension  
+jupyter-server-proxy  
