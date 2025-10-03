@@ -6,6 +6,8 @@ import panel as pn
 import numpy as np
 
 pn.extension('vtk')                 # loads VTK.js support in Panel
+pv.global_theme.trame.server_proxy_enabled = True
+
 pv.set_jupyter_backend('server')     # tell PyVista to return a Panel object
 
 
