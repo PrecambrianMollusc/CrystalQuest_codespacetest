@@ -9,3 +9,5 @@ pythreejs
 ipygany
 panel>=0.14
 openpyxl
+trame
+jupyter-server-proxy
