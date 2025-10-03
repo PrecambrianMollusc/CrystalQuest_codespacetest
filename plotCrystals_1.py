@@ -3,13 +3,17 @@ from pyvista import AxesActor
 from pyvista import examples
 import pandas as pd
 import pyarrow.parquet as pq
+from pathlib import Path
 
 
 import numpy as np
 
+# Determine the folder that contains this script
+BASE_DIR = Path(__file__).resolve().parent
 
 # Load workbook
-xlsx_path = "G:/Elite/Crystals/CrystalTree/Tree Sites.xlsx"
+xlsx_path = BASE_DIR / "Tree Sites.xlsx"
+#xlsx_path = "G:/Elite/Crystals/CrystalTree/Tree Sites.xlsx"
 
 # Read all three sheets into separate DataFrames
 sheet_names = ["Sites"]  # add more if reading multiple sheets 
@@ -20,9 +24,17 @@ Sites_df = dfs["Sites"] # get the required sheet from dfs
 
 #load Systems stars and planets 
 # Read entire file into a Table
-system_table = pq.read_table("G:/Elite/Crystals/CrystalTree/cache2/subset_systemdata.parquet")
-star_table = pq.read_table("G:/Elite/Crystals/CrystalTree/cache2/subset_stars.parquet")
-planet_table = pq.read_table("G:/Elite/Crystals/CrystalTree/cache2/subset_planets.parquet")
+# Point to your Cache2 folder
+DATA_DIR = BASE_DIR / "Cache2"
+
+# Build full file paths
+system_fp = DATA_DIR / "subset_systemdata.parquet"
+star_fp   = DATA_DIR / "subset_stars.parquet"
+planet_fp = DATA_DIR / "subset_planets.parquet"
+
+system_table = pq.read_table(system_fp)
+star_table   = pq.read_table(star_fp)
+planet_table = pq.read_table(planet_fp)
 
 # Convert to pandas 
 system_df = system_table.to_pandas()
@@ -382,3 +394,4 @@ plotter.add_text("Toggle all systems", position=allsystems_label_position, font_
 #plotter.export_html("my_interactive_plot.html")
 
 plotter.show()
+
