@@ -9,6 +9,8 @@ import panel as pn
 
 import numpy as np
 
+pv.set_jupyter_backend('ipygany')  # or 'static', 'pythreejs'
+
 # Determine the folder that contains this script
 BASE_DIR = Path(__file__).resolve().parent
 
@@ -240,9 +242,6 @@ TREE_STYLES = {
     },
         
 }
-
-pv.set_jupyter_backend('ipygany')  # or 'static', 'pythreejs'
-
 plotter = pv.Plotter(notebook=True)
 plotter.set_background("black")
 
@@ -396,4 +395,5 @@ plotter.add_text("Toggle all systems", position=allsystems_label_position, font_
 #plotter.export_html("my_interactive_plot.html")
 
 plotter.show()
+
 
