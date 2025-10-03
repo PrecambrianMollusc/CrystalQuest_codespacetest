@@ -1,15 +1,12 @@
 import pyvista as pv
-from pyvista import AxesActor
-from pyvista import examples
 import pandas as pd
 import pyarrow.parquet as pq
 from pathlib import Path
 import panel as pn
 
-
 import numpy as np
 
-pv.set_jupyter_backend('ipygany')  # or 'static', 'pythreejs'
+pv.set_jupyter_backend('trame')  # or 'static', 'pythreejs'
 
 # Determine the folder that contains this script
 BASE_DIR = Path(__file__).resolve().parent
@@ -395,5 +392,6 @@ plotter.add_text("Toggle all systems", position=allsystems_label_position, font_
 #plotter.export_html("my_interactive_plot.html")
 
 plotter.show()
+
 
 
