@@ -1,12 +1,7 @@
 {
   "name": "Python Data Viz",
   "image": "mcr.microsoft.com/devcontainers/python:3.11",
-  "features": {
-    "ghcr.io/devcontainers/features/python-package-manager:1": {
-      "packageManager": "pip"
-    }
-  },
-  "postCreateCommand": "pip install -r requirements.txt",
+  "postCreateCommand": "pip install --upgrade pip && pip install -r requirements.txt",
   "customizations": {
     "vscode": {
       "extensions": [
