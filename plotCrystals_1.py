@@ -6,10 +6,13 @@ import panel as pn
 import numpy as np
 
 pn.extension('vtk')                 # loads VTK.js support in Panel
-pv.set_jupyter_backend('panel')     # tell PyVista to return a Panel object
+pv.set_jupyter_backend('server')     # tell PyVista to return a Panel object
 
 
 def create_panel_app():
+    pv.OFF_SCREEN = True
+
+
     # Determine the folder that contains this script
     BASE_DIR = Path(__file__).resolve().parent
     
@@ -241,7 +244,7 @@ def create_panel_app():
         },
             
     }
-    plotter = pv.Plotter(notebook=False)
+    plotter = pv.Plotter(off_screen=True)
     plotter.set_background("black")
     
     #plot all the systems as a point cloud 
@@ -372,10 +375,11 @@ def create_panel_app():
     #plotter.export_html("my_interactive_plot.html")
     return plotter.show(return_panel=True)
 
+
 if __name__ == "__main__":
     app = create_panel_app()
     # serve on 0.0.0.0:8888 so Codespaces can forward it
-    pn.serve(app, port=8888, address="0.0.0.0", show=False)    
+    #pn.serve(app, port=8888, address="0.0.0.0", show=False)    
 
 
 
