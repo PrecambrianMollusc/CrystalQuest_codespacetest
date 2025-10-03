@@ -4,6 +4,7 @@ from pyvista import examples
 import pandas as pd
 import pyarrow.parquet as pq
 from pathlib import Path
+import panel as pn
 
 
 import numpy as np
@@ -240,8 +241,9 @@ TREE_STYLES = {
         
 }
 
+pv.set_jupyter_backend('ipygany')  # or 'static', 'pythreejs'
 
-plotter = pv.Plotter()
+plotter = pv.Plotter(notebook=True)
 plotter.set_background("black")
 
 #plot all the systems as a point cloud 

@@ -1,5 +1,11 @@
-pyvista
-pandas
-numpy
-vtk
-pyarrows
+numpy>=1.25
+pandas>=2.0
+pyarrow>=12.0
+pyvista>=0.40
+vtk>=9.4
+jupyterlab
+ipywidgets
+pythreejs
+ipygany
+panel>=0.14
+openpyxl
