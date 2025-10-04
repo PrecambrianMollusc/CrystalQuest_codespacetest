@@ -5,13 +5,16 @@ from pathlib import Path
 import panel as pn
 import numpy as np
 
+print("▶️ Starting plotCrystals_1.py")   # top-level kickoff
+pv.OFF_SCREEN = True
+
+pv.set_jupyter_backend('client')     # tell PyVista to return a Panel object
 pn.extension('vtk')                 # loads VTK.js support in Panel
-pv.global_theme.trame.server_proxy_enabled = True
-
-pv.set_jupyter_backend('server')     # tell PyVista to return a Panel object
-
 
 def create_panel_app():
+    
+    print("   🔄 Entered create_panel_app()")
+
     pv.OFF_SCREEN = True
 
 
@@ -246,6 +249,8 @@ def create_panel_app():
         },
             
     }
+    print("   🔄 done loading date etc ")
+    
     plotter = pv.Plotter(off_screen=True)
     plotter.set_background("black")
     
@@ -375,13 +380,21 @@ def create_panel_app():
     plotter.add_text("Toggle all systems", position=allsystems_label_position, font_size=8, color= 'white')
        
     #plotter.export_html("my_interactive_plot.html")
-    return plotter.show(return_panel=True)
+    #pane = plotter.show(return_viewer=True)
+    print("   ✅ Plotter pane created, returning to Panel")
+ 
+    return plotter.show(return_viewer=True)
+ 
 
 
-if __name__ == "__main__":
-    app = create_panel_app()
+#if __name__ == "__main__":
+#    app = create_panel_app()
+#    print("▶️ plotCrystals_1.py module loaded, app ready")
+
     # serve on 0.0.0.0:8888 so Codespaces can forward it
     #pn.serve(app, port=8888, address="0.0.0.0", show=False)    
+app = create_panel_app()
+print("▶️ plotCrystals_1.py module loaded, app ready")
 
 
 
