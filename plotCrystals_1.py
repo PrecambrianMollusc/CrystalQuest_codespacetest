@@ -72,7 +72,7 @@ all_crystals = (
 
 # Filter out the literal "none" and get uniques
 unique_crystals = sorted({c for c in all_crystals if c != "none"})
-print(unique_crystals)
+#print(unique_crystals)
 
 #set list for tree types 
 tree_types=['both','pods']
@@ -233,15 +233,12 @@ TREE_STYLES = {
 }
 
 
-
-
 # Your Trame application logic here...
 def main():
     server = get_server(client_type="vue3")
+    server.http_headers.shared_array_buffer = True
     state, ctrl = server.state, server.controller
 
-    pl_home = pv.Plotter(off_screen=True)
-    
     plotter = pv.Plotter(off_screen=True)
     plotter.set_background("black")
 

@@ -5,9 +5,9 @@ pyvista>=0.40
 vtk>=9.4
 nest_asyncio
 openpyxl
-trame
+trame >=3.6
 trame-vuetify
-trame-vtk
+trame-vtk >=2.0
 
 #jupyterlab
 #ipywidgets
