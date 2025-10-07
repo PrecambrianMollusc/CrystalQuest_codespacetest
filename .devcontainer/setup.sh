@@ -10,6 +10,6 @@ sudo apt-get install -y libegl1-mesa-dev libgles2-mesa-dev
 
 echo "🐍 Upgrading pip and installing Python dependencies..."
 python3 -m pip install --upgrade pip
-python3 -m pip install -r requirements.txt
+python3 -m pip install -r /workspaces/EliteDangrous_IGAU_CrystalQuest/requirements.txt
 
 echo "✅ Setup complete!"
