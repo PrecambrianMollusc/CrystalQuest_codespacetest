@@ -9,10 +9,11 @@ import pyvista as pv
 from pyvista.trame.ui import plotter_ui
 import pandas as pd
 import pyarrow.parquet as pq
-
+import os
+current_dir = os.getcwd() 
 
 # Load workbook
-xlsx_path = "G:/Elite/Crystals/CrystalTree/Tree Sites.xlsx"
+xlsx_path = os.path.join(current_dir, "Tree Sites.xlsx")
 
 # Read all three sheets into separate DataFrames
 sheet_names = ["Sites"]  # add more if reading multiple sheets 
@@ -23,9 +24,13 @@ Sites_df = dfs["Sites"] # get the required sheet from dfs
 
 #load Systems stars and planets 
 # Read entire file into a Table
-system_table = pq.read_table("G:/Elite/Crystals/CrystalTree/cache2/subset_systemdata.parquet")
-star_table = pq.read_table("G:/Elite/Crystals/CrystalTree/cache2/subset_stars.parquet")
-planet_table = pq.read_table("G:/Elite/Crystals/CrystalTree/cache2/subset_planets.parquet")
+system_table_path = os.path.join(current_dir, "Cache2,","subset_systemdata.parquet")
+star_table_path = os.path.join(current_dir, "Cache2,","subset_stars.parquet")
+planet_table_path = os.path.join(current_dir, "Cache2,","subset_planets.parquet")
+
+system_table = pq.read_table(system_table_path)
+star_table = pq.read_table(star_table_path)
+planet_table = pq.read_table(planet_table_path)
 
 # Convert to pandas 
 system_df = system_table.to_pandas()
