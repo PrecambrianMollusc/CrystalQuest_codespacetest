@@ -1,3 +1,5 @@
+echo "📂 Running setup from: $(pwd)"
+
 #!/bin/bash
 set -e
 
