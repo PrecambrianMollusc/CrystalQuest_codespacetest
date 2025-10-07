@@ -284,7 +284,7 @@ def main():
            continue
 
         cloud_trees = pv.PolyData(pts)
-        glyph_tree = cloud_trees.glyph(scale=False, geom=source)
+        glyph_tree = cloud_trees.glyph(scale=False, geom=source,orient=False)
         #glyph_tree.scale(style.pop("scale"))
         plotter.add_mesh(glyph_tree, **style)
 
@@ -304,7 +304,7 @@ def main():
 
         
         cloud = pv.PolyData(pts)
-        glyph = cloud.glyph(scale=False, geom=source)
+        glyph = cloud.glyph(scale=False, geom=source,orient=False)
         #glyph.scale(style.pop("scale"))
         plotter.add_mesh(glyph, **style)
 
@@ -370,9 +370,9 @@ def main():
     allsystems_label_position = (10 + 25 , 71) # Adjust offset as needed
     plotter.add_text("Toggle all systems", position=allsystems_label_position, font_size=8, color= 'white')
 
-    plotter.export_html("my_interactive_plot2.html")
+    #plotter.export_html("my_interactive_plot2.html")
 
-    plotter.export_vtksz("crystal_scene.zip", format ="zip")  
+    #plotter.export_vtksz("crystal_scene.zip", format ="zip")  
     
     #sphere = pv.Sphere()
     #pl_home.add_mesh(sphere, color='blue', name='sphere')
