@@ -342,30 +342,30 @@ def main():
         # You can access its properties to change its visibility
         bd_actor.visibility = checkbox_value
 
-    plotter.add_checkbox_button_widget(callback=toggle_visibility_bd, value=True, position=(10, 10), size=20, color_on='brown')
+    #plotter.add_checkbox_button_widget(callback=toggle_visibility_bd, value=True, position=(10, 10), size=20, color_on='brown')
 
     def toggle_visibility_sphere(checkbox_value):
         # The point_actor is accessible within the scope of the callback function
         # You can access its properties to change its visibility
         treesphere_actor.visibility = checkbox_value
 
-    plotter.add_checkbox_button_widget(callback=toggle_visibility_sphere, value=True, position=(10, 40), size=20, color_on='blue')
+    #plotter.add_checkbox_button_widget(callback=toggle_visibility_sphere, value=True, position=(10, 40), size=20, color_on='blue')
 
     def toggle_visibility_allsystems(checkbox_value):
         # The point_actor is accessible within the scope of the callback function
         # You can access its properties to change its visibility
         allsystems_actor.visibility = checkbox_value
 
-    plotter.add_checkbox_button_widget(callback=toggle_visibility_allsystems, value=True, position=(10, 70), size=20, color_on='white')
+    #plotter.add_checkbox_button_widget(callback=toggle_visibility_allsystems, value=True, position=(10, 70), size=20, color_on='white')
 
-    bd_label_position = (10 + 25 , 11) # Adjust offset as needed
-    plotter.add_text("Toggle Brown Dwarf", position=bd_label_position, font_size=8, color= 'white')
+    #bd_label_position = (10 + 25 , 11) # Adjust offset as needed
+    #plotter.add_text("Toggle Brown Dwarf", position=bd_label_position, font_size=8, color= 'white')
 
-    sphere_label_position = (10 + 25 , 41) # Adjust offset as needed
-    plotter.add_text("Toggle Sphere", position=sphere_label_position, font_size=8, color= 'white')
+    #sphere_label_position = (10 + 25 , 41) # Adjust offset as needed
+    #plotter.add_text("Toggle Sphere", position=sphere_label_position, font_size=8, color= 'white')
 
-    allsystems_label_position = (10 + 25 , 71) # Adjust offset as needed
-    plotter.add_text("Toggle all systems", position=allsystems_label_position, font_size=8, color= 'white')
+    #allsystems_label_position = (10 + 25 , 71) # Adjust offset as needed
+    #plotter.add_text("Toggle all systems", position=allsystems_label_position, font_size=8, color= 'white')
 
     #plotter.export_html("my_interactive_plot2.html")
 
