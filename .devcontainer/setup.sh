@@ -1,3 +1,5 @@
+echo "🚀 SETUP.SH IS RUNNING!"
+
 echo "📂 Running setup from: $(pwd)"
 
 #!/bin/bash
